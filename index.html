@@ -11,16 +11,16 @@
 
         /* HEADER */
         header {
-            background: #000;
+            background: #0a1628;
             padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
-        .logo span { color: #4CAF50; }
+        .logo span { color: #e63946; }
         .header-cta {
-            background: #4CAF50;
+            background: #e63946;
             color: #fff;
             padding: 10px 20px;
             border-radius: 8px;
@@ -31,7 +31,7 @@
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, #000 0%, #1a1a2e 100%);
+            background: linear-gradient(135deg, #0a1628 0%, #1a2f5e 100%);
             color: #fff;
             padding: 80px 24px;
             text-align: center;
@@ -43,26 +43,54 @@
             line-height: 1.1;
             margin-bottom: 20px;
         }
-        .hero h1 span { color: #4CAF50; }
+        .hero h1 span { color: #e63946; }
         .hero p {
             font-size: 18px;
-            color: #aaa;
+            color: #aac4e8;
             max-width: 500px;
             margin: 0 auto 40px;
             line-height: 1.6;
         }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
         .hero-cta {
             display: inline-block;
-            background: #4CAF50;
+            background: #e63946;
             color: #fff;
             padding: 18px 40px;
             border-radius: 12px;
             text-decoration: none;
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 16px;
         }
-        .hero-sub { color: #666; font-size: 14px; }
+        .hero-cta-phone {
+            display: inline-block;
+            background: #fff;
+            color: #0a1628;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .hero-sub { color: #7a9cbf; font-size: 14px; }
+
+        /* PHONE BANNER */
+        .phone-banner {
+            background: #e63946;
+            color: #fff;
+            text-align: center;
+            padding: 20px 24px;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .phone-banner a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            display: block;
+            margin-top: 4px;
+        }
 
         /* HOW IT WORKS */
         .section { padding: 64px 24px; max-width: 1000px; margin: 0 auto; }
@@ -81,13 +109,14 @@
         .step {
             text-align: center;
             padding: 32px 24px;
-            background: #f8f8f8;
+            background: #f0f4ff;
             border-radius: 16px;
+            border: 2px solid #dce8ff;
         }
         .step-num {
             width: 48px;
             height: 48px;
-            background: #4CAF50;
+            background: #1a3a8f;
             color: #fff;
             border-radius: 50%;
             display: flex;
@@ -97,27 +126,27 @@
             font-weight: 800;
             margin: 0 auto 16px;
         }
-        .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-        .step p { color: #666; font-size: 15px; line-height: 1.5; }
+        .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #0a1628; }
+        .step p { color: #555; font-size: 15px; line-height: 1.5; }
 
         /* WHY US */
-        .why { background: #f8f8f8; padding: 64px 24px; }
+        .why { background: #0a1628; padding: 64px 24px; }
         .why-inner { max-width: 1000px; margin: 0 auto; }
-        .why h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 48px; }
+        .why h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 48px; color: #fff; }
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 24px;
         }
         .feature {
-            background: #fff;
+            background: #1a2f5e;
             padding: 28px;
             border-radius: 16px;
-            border: 1px solid #eee;
+            border: 1px solid #2a4a8e;
         }
         .feature-icon { font-size: 32px; margin-bottom: 12px; }
-        .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-        .feature p { color: #666; font-size: 14px; line-height: 1.5; }
+        .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .feature p { color: #aac4e8; font-size: 14px; line-height: 1.5; }
 
         /* WHAT WE BUY */
         .models { padding: 64px 24px; max-width: 1000px; margin: 0 auto; }
@@ -129,7 +158,7 @@
             gap: 12px;
         }
         .model-card {
-            background: #000;
+            background: #1a3a8f;
             color: #fff;
             padding: 16px;
             border-radius: 12px;
@@ -140,17 +169,28 @@
 
         /* CTA SECTION */
         .cta-section {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
             color: #fff;
             padding: 64px 24px;
             text-align: center;
         }
         .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
         .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 32px; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         .cta-btn {
             display: inline-block;
             background: #fff;
-            color: #4CAF50;
+            color: #e63946;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        .cta-btn-phone {
+            display: inline-block;
+            background: #0a1628;
+            color: #fff;
             padding: 18px 40px;
             border-radius: 12px;
             text-decoration: none;
@@ -160,26 +200,34 @@
 
         /* FOOTER */
         footer {
-            background: #000;
-            color: #666;
+            background: #060d1a;
+            color: #556;
             padding: 32px 24px;
             text-align: center;
             font-size: 14px;
         }
-        footer a { color: #4CAF50; text-decoration: none; }
+        footer a { color: #e63946; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo">Phones<span>4</span>Cash Boston</div>
-    <a href="https://www.facebook.com/phones4cashboston" class="header-cta">Get a Quote</a>
+    <a href="tel:7818279453" class="header-cta">📞 (781) 827-9453</a>
 </header>
+
+<div class="phone-banner">
+    📞 Call or Text Us Now
+    <a href="tel:7818279453">(781) 827-9453</a>
+</div>
 
 <div class="hero">
     <h1>Get <span>Instant Cash</span><br>For Your iPhone</h1>
     <p>Boston's fastest phone buying service. We come to you, pay cash on the spot, and close in minutes.</p>
-    <a href="https://www.facebook.com/phones4cashboston" class="hero-cta">💬 Message Us Now</a>
+    <div class="hero-buttons">
+        <a href="tel:7818279453" class="hero-cta">📞 Call (781) 827-9453</a>
+        <a href="https://www.facebook.com/phones4cashboston" class="hero-cta-phone">💬 Message Us</a>
+    </div>
     <div class="hero-sub">Average response time: under 5 minutes</div>
 </div>
 
@@ -189,7 +237,7 @@
         <div class="step">
             <div class="step-num">1</div>
             <h3>Tell Us Your Model</h3>
-            <p>Message us your iPhone model. That's all we need to get started.</p>
+            <p>Call, text, or message us your iPhone model. That's all we need.</p>
         </div>
         <div class="step">
             <div class="step-num">2</div>
@@ -247,12 +295,15 @@
 
 <div class="cta-section">
     <h2>Ready to Sell?</h2>
-    <p>Message us now and get a quote in minutes</p>
-    <a href="https://www.facebook.com/phones4cashboston" class="cta-btn">💬 Get My Offer Now</a>
+    <p>Call, text, or message us — get a quote in minutes</p>
+    <div class="cta-buttons">
+        <a href="tel:7818279453" class="cta-btn">📞 (781) 827-9453</a>
+        <a href="https://www.facebook.com/phones4cashboston" class="cta-btn-phone">💬 Message on Facebook</a>
+    </div>
 </div>
 
 <footer>
-    <p>© 2026 Phones 4 Cash Boston · Boston, MA · <a href="https://www.facebook.com/phones4cashboston">Facebook</a> · <a href="https://www.instagram.com/phones4cashboston">Instagram</a></p>
+    <p>© 2026 Phones 4 Cash Boston · Boston, MA · <a href="tel:7818279453">(781) 827-9453</a> · <a href="https://www.facebook.com/phones4cashboston">Facebook</a> · <a href="https://www.instagram.com/phones4cashboston">Instagram</a></p>
 </footer>
 
 </body>
