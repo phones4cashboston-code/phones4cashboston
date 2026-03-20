@@ -6,213 +6,293 @@
     <title>Phones 4 Cash Boston | Sell Your iPhone Fast</title>
     <meta name="description" content="Get instant cash for your iPhone in Boston. Fast, fair, and hassle-free. We buy all iPhone models.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; color: #fff; background: #0a0a0a; }
+
+        /* NEON EFFECTS */
+        .neon-pink { color: #ff2d7e; text-shadow: 0 0 10px #ff2d7e, 0 0 20px #ff2d7e, 0 0 40px #ff2d7e; }
+        .neon-blue { color: #00d4ff; text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff; }
 
         /* HEADER */
         header {
-            background: #0a1628;
+            background: #0a0a0a;
+            border-bottom: 1px solid #1a1a1a;
             padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
-        .logo span { color: #e63946; }
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        .logo .p4 { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
+        .logo .cash { color: #ff2d7e; text-shadow: 0 0 10px #ff2d7e; }
+        .logo .boston { color: #fff; }
         .header-cta {
-            background: #e63946;
+            background: linear-gradient(135deg, #ff2d7e, #c4006b);
             color: #fff;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
+            box-shadow: 0 0 15px rgba(255,45,126,0.4);
         }
+
+        /* PHONE BANNER */
+        .phone-banner {
+            background: linear-gradient(135deg, #ff2d7e, #c4006b);
+            color: #fff;
+            text-align: center;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(255,45,126,0.5);
+        }
+        .phone-banner a { color: #fff; text-decoration: none; font-size: 20px; display: block; margin-top: 2px; }
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, #0a1628 0%, #1a2f5e 100%);
-            color: #fff;
+            background: #0a0a0a;
             padding: 80px 24px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,45,126,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,45,126,0.15);
+            border: 1px solid rgba(255,45,126,0.4);
+            color: #ff2d7e;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
         }
         .hero h1 {
-            font-size: clamp(32px, 6vw, 64px);
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 10vw, 96px);
+            letter-spacing: 3px;
+            line-height: 1;
+            margin-bottom: 24px;
         }
-        .hero h1 span { color: #e63946; }
+        .hero h1 .line2 { color: #ff2d7e; text-shadow: 0 0 20px rgba(255,45,126,0.7); }
+        .hero h1 .line3 { color: #00d4ff; text-shadow: 0 0 20px rgba(0,212,255,0.7); }
         .hero p {
             font-size: 18px;
-            color: #aac4e8;
+            color: #888;
             max-width: 500px;
             margin: 0 auto 40px;
             line-height: 1.6;
         }
         .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
-        .hero-cta {
+        .btn-primary {
             display: inline-block;
-            background: #e63946;
+            background: linear-gradient(135deg, #ff2d7e, #c4006b);
             color: #fff;
             padding: 18px 40px;
             border-radius: 12px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
+            box-shadow: 0 0 25px rgba(255,45,126,0.5);
+            transition: box-shadow 0.3s;
         }
-        .hero-cta-phone {
+        .btn-secondary {
             display: inline-block;
-            background: #fff;
-            color: #0a1628;
+            background: rgba(0,212,255,0.1);
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
             padding: 18px 40px;
             border-radius: 12px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
+            box-shadow: 0 0 15px rgba(0,212,255,0.2);
         }
-        .hero-sub { color: #7a9cbf; font-size: 14px; }
+        .hero-sub { color: #555; font-size: 13px; }
 
-        /* PHONE BANNER */
-        .phone-banner {
-            background: #e63946;
-            color: #fff;
-            text-align: center;
-            padding: 20px 24px;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        /* STATS BAR */
+        .stats-bar {
+            background: #111;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            flex-wrap: wrap;
         }
-        .phone-banner a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 24px;
-            display: block;
-            margin-top: 4px;
+        .stat { text-align: center; }
+        .stat-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            letter-spacing: 2px;
+            color: #ff2d7e;
+            text-shadow: 0 0 10px rgba(255,45,126,0.5);
         }
+        .stat-label { font-size: 12px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
         /* HOW IT WORKS */
-        .section { padding: 64px 24px; max-width: 1000px; margin: 0 auto; }
+        .section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+        .section-tag {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #00d4ff;
+            margin-bottom: 16px;
+        }
         .section h2 {
-            font-size: 32px;
-            font-weight: 800;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(32px, 6vw, 56px);
+            letter-spacing: 2px;
             text-align: center;
-            margin-bottom: 48px;
-            letter-spacing: -0.5px;
+            margin-bottom: 56px;
         }
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-        }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
         .step {
-            text-align: center;
+            background: #111;
+            border: 1px solid #1a1a1a;
             padding: 32px 24px;
-            background: #f0f4ff;
             border-radius: 16px;
-            border: 2px solid #dce8ff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff2d7e, #00d4ff);
         }
         .step-num {
-            width: 48px;
-            height: 48px;
-            background: #1a3a8f;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 800;
-            margin: 0 auto 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: rgba(255,45,126,0.2);
+            margin-bottom: 8px;
         }
-        .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #0a1628; }
-        .step p { color: #555; font-size: 15px; line-height: 1.5; }
+        .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .step p { color: #666; font-size: 14px; line-height: 1.6; }
 
         /* WHY US */
-        .why { background: #0a1628; padding: 64px 24px; }
+        .why { background: #0d0d0d; padding: 80px 24px; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
         .why-inner { max-width: 1000px; margin: 0 auto; }
-        .why h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 48px; color: #fff; }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .feature {
-            background: #1a2f5e;
+            background: #111;
             padding: 28px;
             border-radius: 16px;
-            border: 1px solid #2a4a8e;
+            border: 1px solid #1a1a1a;
         }
-        .feature-icon { font-size: 32px; margin-bottom: 12px; }
-        .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #fff; }
-        .feature p { color: #aac4e8; font-size: 14px; line-height: 1.5; }
+        .feature-icon { font-size: 28px; margin-bottom: 12px; }
+        .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .feature p { color: #666; font-size: 14px; line-height: 1.5; }
 
         /* WHAT WE BUY */
-        .models { padding: 64px 24px; max-width: 1000px; margin: 0 auto; }
-        .models h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 16px; }
-        .models p { text-align: center; color: #666; margin-bottom: 40px; }
-        .model-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 12px;
-        }
+        .models { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
         .model-card {
-            background: #1a3a8f;
+            background: #111;
+            border: 1px solid #1a1a1a;
             color: #fff;
-            padding: 16px;
+            padding: 18px 16px;
             border-radius: 12px;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .model-card.hot {
+            border-color: rgba(255,45,126,0.4);
+            background: rgba(255,45,126,0.05);
+        }
+        .model-card.hot::after {
+            content: '🔥';
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: 12px;
         }
 
-        /* CTA SECTION */
+        /* CTA */
         .cta-section {
-            background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
-            color: #fff;
-            padding: 64px 24px;
+            background: #0a0a0a;
+            padding: 80px 24px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
-        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 32px; }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(255,45,126,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(40px, 8vw, 72px);
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+        .cta-section p { font-size: 18px; color: #888; margin-bottom: 40px; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .cta-btn {
-            display: inline-block;
-            background: #fff;
-            color: #e63946;
-            padding: 18px 40px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 800;
-        }
-        .cta-btn-phone {
-            display: inline-block;
-            background: #0a1628;
-            color: #fff;
-            padding: 18px 40px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 800;
-        }
 
         /* FOOTER */
         footer {
-            background: #060d1a;
-            color: #556;
+            background: #000;
+            border-top: 1px solid #1a1a1a;
+            color: #444;
             padding: 32px 24px;
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
         }
-        footer a { color: #e63946; text-decoration: none; }
+        footer a { color: #ff2d7e; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">Phones<span>4</span>Cash Boston</div>
+    <div class="logo">
+        <span class="p4">PHONES 4 </span><span class="cash">CASH </span><span class="boston">BOSTON</span>
+    </div>
     <a href="tel:7818279453" class="header-cta">📞 (781) 827-9453</a>
 </header>
 
@@ -222,44 +302,70 @@
 </div>
 
 <div class="hero">
-    <h1>Get <span>Instant Cash</span><br>For Your iPhone</h1>
-    <p>Boston's fastest phone buying service. We come to you, pay cash on the spot, and close in minutes.</p>
+    <div class="hero-tag">💵 BOSTON'S #1 PHONE BUYER</div>
+    <h1>
+        <span>GET INSTANT</span><br>
+        <span class="line2">CASH FOR YOUR</span><br>
+        <span class="line3">iPHONE</span>
+    </h1>
+    <p>Same day meetup. Cash in hand. No waiting. We pay top dollar for iPhone 14, 15, 16 & 17.</p>
     <div class="hero-buttons">
-        <a href="tel:7818279453" class="hero-cta">📞 Call (781) 827-9453</a>
-        <a href="https://www.facebook.com/phones4cashboston" class="hero-cta-phone">💬 Message Us</a>
+        <a href="tel:7818279453" class="btn-primary">📞 Call (781) 827-9453</a>
+        <a href="https://www.facebook.com/phones4cashboston" class="btn-secondary">💬 Message Us</a>
     </div>
     <div class="hero-sub">Average response time: under 5 minutes</div>
 </div>
 
+<div class="stats-bar">
+    <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Phones Bought</div>
+    </div>
+    <div class="stat">
+        <div class="stat-num">$1,100</div>
+        <div class="stat-label">Max Payout</div>
+    </div>
+    <div class="stat">
+        <div class="stat-num">5 MIN</div>
+        <div class="stat-label">Response Time</div>
+    </div>
+    <div class="stat">
+        <div class="stat-num">SAME DAY</div>
+        <div class="stat-label">Cash Payment</div>
+    </div>
+</div>
+
 <div class="section">
-    <h2>How It Works</h2>
+    <span class="section-tag">— How It Works —</span>
+    <h2>3 STEPS TO <span style="color:#ff2d7e">CASH</span></h2>
     <div class="steps">
         <div class="step">
-            <div class="step-num">1</div>
+            <div class="step-num">01</div>
             <h3>Tell Us Your Model</h3>
-            <p>Call, text, or message us your iPhone model. That's all we need.</p>
+            <p>Text or call us with your iPhone model. That's all we need to get started.</p>
         </div>
         <div class="step">
-            <div class="step-num">2</div>
-            <h3>Get an Offer</h3>
-            <p>We send you a fair cash offer instantly — no waiting, no games.</p>
+            <div class="step-num">02</div>
+            <h3>Get Your Offer</h3>
+            <p>We send you a fair cash offer in minutes — no waiting, no games.</p>
         </div>
         <div class="step">
-            <div class="step-num">3</div>
+            <div class="step-num">03</div>
             <h3>Meet & Get Paid</h3>
-            <p>We meet in Boston, inspect the phone, and pay you cash on the spot.</p>
+            <p>We meet anywhere in Boston, inspect the phone, and pay cash on the spot.</p>
         </div>
     </div>
 </div>
 
 <div class="why">
     <div class="why-inner">
-        <h2>Why Sell To Us?</h2>
+        <span class="section-tag">— Why Choose Us —</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,6vw,56px);letter-spacing:2px;text-align:center;margin-bottom:48px;">WHY SELL TO <span style="color:#00d4ff">US</span></h2>
         <div class="features">
             <div class="feature">
                 <div class="feature-icon">💵</div>
                 <h3>Cash in Hand</h3>
-                <p>No waiting for PayPal or checks. Walk away with cash.</p>
+                <p>No waiting for Venmo or PayPal. Walk away with real cash every time.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">⚡</div>
@@ -269,36 +375,37 @@
             <div class="feature">
                 <div class="feature-icon">📍</div>
                 <h3>Boston Area</h3>
-                <p>We meet anywhere in the Greater Boston area.</p>
+                <p>We meet anywhere within 15 miles of Boston — at your convenience.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">🤝</div>
-                <h3>Fair Prices</h3>
-                <p>We pay top dollar. No lowballing, no wasting your time.</p>
+                <h3>Top Dollar</h3>
+                <p>We beat carrier trade-ins and other buyers. No lowballing, ever.</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="models">
-    <h2>What We Buy</h2>
-    <p>We buy iPhone 12 and newer in any condition</p>
+    <span class="section-tag">— What We Buy —</span>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,6vw,56px);letter-spacing:2px;text-align:center;margin-bottom:16px;">PHONES WE <span style="color:#ff2d7e">BUY</span></h2>
+    <p style="text-align:center;color:#666;margin-bottom:40px;">iPhone 12 and newer · Any condition · Locked or Unlocked</p>
     <div class="model-grid">
-        <div class="model-card">iPhone 17 Series</div>
-        <div class="model-card">iPhone 16 Series</div>
-        <div class="model-card">iPhone 15 Series</div>
-        <div class="model-card">iPhone 14 Series</div>
+        <div class="model-card hot">iPhone 17 Series</div>
+        <div class="model-card hot">iPhone 16 Series</div>
+        <div class="model-card hot">iPhone 15 Series</div>
+        <div class="model-card hot">iPhone 14 Series</div>
         <div class="model-card">iPhone 13 Series</div>
         <div class="model-card">iPhone 12 Series</div>
     </div>
 </div>
 
 <div class="cta-section">
-    <h2>Ready to Sell?</h2>
+    <h2>READY TO <span style="color:#ff2d7e">SELL?</span></h2>
     <p>Call, text, or message us — get a quote in minutes</p>
     <div class="cta-buttons">
-        <a href="tel:7818279453" class="cta-btn">📞 (781) 827-9453</a>
-        <a href="https://www.facebook.com/phones4cashboston" class="cta-btn-phone">💬 Message on Facebook</a>
+        <a href="tel:7818279453" class="btn-primary">📞 (781) 827-9453</a>
+        <a href="https://www.facebook.com/phones4cashboston" class="btn-secondary">💬 Message on Facebook</a>
     </div>
 </div>
 
